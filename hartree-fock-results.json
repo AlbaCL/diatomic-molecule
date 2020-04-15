@@ -1,0 +1,86 @@
+{
+    "hartree-fock-m76k9-2561220996": {
+        "class": "create-diatomic-molecule",
+        "geometry": {
+            "id": "hartree-fock-m76k9-2561220996/geometry",
+            "schema": "molecular_geometry",
+            "sites": [
+                {
+                    "id": "hartree-fock-m76k9-2561220996/geometry_sites[0]",
+                    "molecular_geometry_sites_index": 0,
+                    "parentId": "hartree-fock-m76k9-2561220996/geometry",
+                    "parentType": "molecular_geometry",
+                    "species": "H",
+                    "workflowId": "hartree-fock-m76k9",
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "id": "hartree-fock-m76k9-2561220996/geometry_sites[1]",
+                    "molecular_geometry_sites_index": 1,
+                    "parentId": "hartree-fock-m76k9-2561220996/geometry",
+                    "parentType": "molecular_geometry",
+                    "species": "H",
+                    "workflowId": "hartree-fock-m76k9",
+                    "x": 0,
+                    "y": 0,
+                    "z": 0.7
+                }
+            ],
+            "taskClass": "create-diatomic-molecule",
+            "taskId": "hartree-fock-m76k9-2561220996",
+            "workflowId": "hartree-fock-m76k9"
+        },
+        "id": "hartree-fock-m76k9-2561220996",
+        "inputParam:bond-length": "0.7",
+        "inputParam:command": "python3 main_script.py",
+        "inputParam:cpu": "1000m",
+        "inputParam:disk": "10Gi",
+        "inputParam:docker-image": "z-quantum-default",
+        "inputParam:docker-registry": "zapatacomputing",
+        "inputParam:docker-tag": "latest",
+        "inputParam:memory": "1024Mi",
+        "inputParam:species1": "H",
+        "inputParam:species2": "H",
+        "workflowId": "hartree-fock-m76k9"
+    },
+    "hartree-fock-m76k9-3413050334": {
+        "class": "run-psi4",
+        "energycalc-results": {
+            "energy": -1.1173735079951468,
+            "id": "hartree-fock-m76k9-3413050334/energycalc-results",
+            "n_alpha": 1,
+            "n_beta": 1,
+            "n_frozen_core": 0,
+            "n_frozen_valence": 0,
+            "n_mo": 2,
+            "schema": "zapata-v1-energy_calc",
+            "taskClass": "run-psi4",
+            "taskId": "hartree-fock-m76k9-3413050334",
+            "workflowId": "hartree-fock-m76k9"
+        },
+        "id": "hartree-fock-m76k9-3413050334",
+        "inputArtifact:geometry": "hartree-fock-m76k9-2561220996/geometry",
+        "inputParam:basis": "STO-3G",
+        "inputParam:charge": "0",
+        "inputParam:command": "bash main_script.sh",
+        "inputParam:cpu": "1000m",
+        "inputParam:disk": "10Gi",
+        "inputParam:docker-image": "qe-psi4",
+        "inputParam:docker-registry": "zapatacomputing",
+        "inputParam:docker-tag": "latest",
+        "inputParam:freeze-core": "False",
+        "inputParam:freeze-core-extract": "False",
+        "inputParam:memory": "1024Mi",
+        "inputParam:method": "scf",
+        "inputParam:multiplicity": "1",
+        "inputParam:n-active": "None",
+        "inputParam:n-active-extract": "None",
+        "inputParam:nthreads": "4",
+        "inputParam:options": "None",
+        "inputParam:reference": "rhf",
+        "inputParam:save-hamiltonian": "False",
+        "workflowId": "hartree-fock-m76k9"
+    }
+}
